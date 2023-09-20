@@ -87,7 +87,7 @@ impl Client {
 // If the response is 2XX and parses, return Success.
 // If the response is 2XX and doesn't parse, return Invalid.
 // If the response isn't 2XX, return Failure, with API errors if they were included.
-async fn map_api_response<ResultType: ApiResult>(
+pub async fn map_api_response<ResultType: ApiResult>(
     resp: reqwest::Response,
 ) -> ApiResponse<ResultType> {
     let status = resp.status();
