@@ -141,7 +141,7 @@ where
     }
 }
 
-async fn map_api_response_json<Endpoint>(
+pub async fn map_api_response_json<Endpoint>(
     resp: reqwest::Response,
 ) -> Result<Endpoint::ResponseType, ApiFailure>
 where
